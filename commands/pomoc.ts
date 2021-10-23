@@ -1,5 +1,6 @@
 import { ColorResolvable, MessageEmbed } from "discord.js"
 import { ICommand } from "wokcommands"
+//questions options
 const questions = [
     {name:"winrar",value:"winrar"},
     {name:"google",value:"google"},
@@ -7,6 +8,7 @@ const questions = [
     {name:"google maps",value:"google maps"},
     {name:"html",value:"html"}
 ]
+//answers to to the questions
 const questionsAnswersEmbedData = [
     {
         name:"google prezentacje",
@@ -114,7 +116,9 @@ export default {
         }
     ],
     callback: async ({interaction})=>{
+        //get response data from questionsAnswersEmbedData
         let questionAnswerData = questionsAnswersEmbedData.filter((q)=>q.name == interaction.options.getString("temat",true))[0]
+        //create embed to send
         const embed = new MessageEmbed()
             .setTitle(questionAnswerData.title)
             .setURL(questionAnswerData.url)
@@ -124,6 +128,7 @@ export default {
         // questionAnswerData.fields.forEach((field)=>{
         //     embed.addField(field.name,field.value)
         // })
+        //send 
         interaction.reply({embeds:[embed]})
     }
 } as ICommand

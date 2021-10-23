@@ -20,13 +20,14 @@ export default {
         }
     ],
     callback: async ({interaction})=>{
-        const szanse = interaction.options.getInteger("szanse") || 6
-        if(szanse < 2){
+        //get chances 
+        const chances = interaction.options.getInteger("szanse") || 6
+        if(chances < 2){
             await interaction.reply("Szanse muszą być większe niż 2!")
             setTimeout(()=>interaction.deleteReply(),2000)
             return
         }
-        const typ = interaction.options.getString("typ")
-        ruletka(szanse,typ!,interaction)
+        const type = interaction.options.getString("typ")
+        ruletka(chances,type!,interaction)
     }
 } as ICommand

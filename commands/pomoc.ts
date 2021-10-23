@@ -72,6 +72,32 @@ const questionsAnswersEmbedData = [
             }
         ]
     },
+    {
+        name:"google maps",
+        title:"Pomoc na temat map google",
+        url:"https://google.com/maps",
+        thumbnailUrl:"https://play-lh.googleusercontent.com/Kf8WTct65hFJxBUDm5E-EpYsiDoLQiGGbnuyP6HBNax43YShXti9THPon1YKB6zPYpA",
+        color:"#3bd1ff",
+        fields:[
+            {
+                name:"Co to jest?",
+                value:"Jest to serwis internetowy umożliwiający wyszukiwanie obiektów, oglądanie map, zdjęć lotniczych powierzchni Ziemi, 360° panoramiczne widoki z poziomu ulic (Street view), natężenie ruchu ulicznego w czasie rzeczywistym, planowanie tras podróży samochodem, transportem publicznym, rowerem, pieszo lub samolotem oraz tworzenie „wizytówek” firm”."
+            }
+        ]
+    },
+    {
+        name:"html",
+        title:"Pomoc na temat języka html",
+        url:"https://pl.wikipedia.org/wiki/HTML",
+        thumbnailUrl:"https://cdn-icons-png.flaticon.com/512/919/919827.png",
+        color:"#3bd1ff",
+        fields:[
+            {
+                name:"Co to jest?",
+                value:"HTML pozwala opisać strukturę informacji zawartych wewnątrz strony internetowej, nadając odpowiednie znaczenie semantyczne poszczególnym fragmentom tekstu – formując hiperłącza, akapity, nagłówki, listy – oraz osadza w tekście dokumentu obiekty plikowe np. multimedia bądź elementy baz danych np. interaktywne formularze danych. HTML umożliwia określenie wyglądu dokumentu w przeglądarce internetowej. Do szczegółowego opisu formatowania akapitów, nagłówków, użytych czcionek i kolorów, zalecane jest wykorzystywanie kaskadowych arkuszy stylów."
+            }
+        ]
+    },
 ]
 export default {
     category:"Włodek",

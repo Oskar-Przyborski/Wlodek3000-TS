@@ -1,5 +1,5 @@
 import { ICommand } from "wokcommands"
-import algebra, { Expression } from 'algebra.js'
+import nerdamer from 'nerdamer'
 import { MessageEmbed } from "discord.js"
 import preventFormatting from "../utils/preventFormatting"
 export default {
@@ -20,10 +20,10 @@ export default {
         const wyrazenie = interaction.options.getString("wyrazenie",true)
 
         try {
-            let expression = algebra.parse(wyrazenie) as Expression
+            let expression = nerdamer(wyrazenie).expand().text()
             const embed = new MessageEmbed()
                 .addField("Podanie wyrażenie", preventFormatting(wyrazenie) )
-                .addField("Uproszczone wyrażenie", preventFormatting(expression.toString()) )
+                .addField("Uproszczone wyrażenie", preventFormatting(expression))
                 .setFooter(`Requested by ${user.username}`,user.displayAvatarURL())
             interaction.reply({embeds:[embed]})
         } catch (error) {

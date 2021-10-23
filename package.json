@@ -15,6 +15,7 @@
     "axios": "^0.23.0",
     "discord.js": "^13.2.0",
     "dotenv": "^10.0.0",
+    "nerdamer": "^1.1.12",
     "wokcommands": "^1.5.3"
   },
   "devDependencies": {

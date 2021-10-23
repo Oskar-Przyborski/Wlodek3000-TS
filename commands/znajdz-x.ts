@@ -1,5 +1,8 @@
 import { ICommand } from "wokcommands"
-import algebra, { Equation } from 'algebra.js'
+import nerdamer from "nerdamer"
+require("nerdamer/Algebra.js")
+require("nerdamer/Calculus.js")
+require("nerdamer/Solve.js")
 import { MessageEmbed } from "discord.js"
 import preventFormatting from "../utils/preventFormatting"
 export default {
@@ -10,7 +13,7 @@ export default {
     options: [
         {
             name:"rownanie",
-            description:"Podaj równanie do rozwiązania",
+            description:"Podaj równanie",
             type:"STRING",
             required:true
         },
@@ -27,15 +30,15 @@ export default {
         let dla = interaction.options.getString("dla")
         if(dla == null) dla = "x"
         try {
-            let equation = algebra.parse(rownanie) as Equation
-            let answer = equation.solveFor(dla);
+            const equation = nerdamer(rownanie).toString()
+            const answer = nerdamer(rownanie).solveFor(dla).toString()
             const embed = new MessageEmbed()
-                .addField("Równanie",preventFormatting(equation.toString()))
-                .addField("Wynik",`${dla} = ${preventFormatting(answer.toString())}`)
+                .addField("Równanie",preventFormatting(equation))
+                .addField("Wynik",`${dla} = ${preventFormatting(answer)}`)
                 .setFooter(`Requested by ${user.username}`,user.displayAvatarURL())
             interaction.reply({embeds:[embed]})
         } catch (error) {
-            interaction.reply("Nastąpił error!")
+            interaction.reply("Nastąpił error!\n" + error)
         }
         
     }

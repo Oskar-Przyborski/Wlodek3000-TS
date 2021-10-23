@@ -2,15 +2,11 @@ import { CommandInteraction, MessageOptions,Message, MessageComponentInteraction
 
 import DiscordJS from "discord.js";
 import banMember from "./ban";
-function getRandomIntInclusive(min:number, max:number): number {
-    min = Math.ceil(min);
-    max = Math.floor(max);
-    return Math.floor(Math.random() * (max - min + 1)) + min;
-}
+import randomInt from "./randomInt";
 
 const ruletka = async (szanse:number,typ:string,interaction:CommandInteraction | MessageComponentInteraction)=>{
-    const zabojczyWynik = getRandomIntInclusive(1,szanse)
-    const wynik = getRandomIntInclusive(1,szanse)
+    const zabojczyWynik = randomInt(1,szanse)
+    const wynik = randomInt(1,szanse)
     let message:MessageOptions
     let resultMessage:Message | void 
     if(zabojczyWynik===wynik){

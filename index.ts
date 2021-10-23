@@ -3,6 +3,7 @@ import  WOKCommands from "wokcommands"
 import path from "path"
 import axios from 'axios'
 import dotenv from 'dotenv'
+import randomInt from './utils/randomInt'
 dotenv.config() //config env
 
 //create instance of client
@@ -24,7 +25,10 @@ client.on("ready",()=>{
 })
 client.on("messageCreate",(message)=>{
     //if pinged
-    if(message.mentions.has(client.user!)) message.reply("co pingujesz cwelu")
+    if(message.mentions.has(client.user!)){
+        // 1/30 chance to send that message
+        if(randomInt(1,20)==15) message.reply("co pingujesz cwelu")
+    }
 })
 
 //delete all commands in case of mistake

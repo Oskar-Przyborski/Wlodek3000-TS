@@ -16,7 +16,8 @@
     "discord.js": "^13.2.0",
     "dotenv": "^10.0.0",
     "nerdamer": "^1.1.12",
-    "wokcommands": "^1.5.3"
+    "wokcommands": "^1.5.3",
+    "ts-node":"^10.0.0"
   },
   "devDependencies": {
     "@types/algebra.js": "^0.2.1",
